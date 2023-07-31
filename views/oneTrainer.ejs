@@ -1,0 +1,45 @@
+<%- include('navbar') %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/trainers/<%- resultTrainer[0].photo %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%- resultTrainer[0].name %></h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><%- resultTrainer[0].email %></li>
+        </ul>
+        <div class="card-body">
+          <a href="#" class="card-link">Editar</a>
+          <a href="#" class="card-link">Eliminar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <% resultPokemon.forEach(pokemon => { %>
+    <div class="col-4 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/pokemons/<%- pokemon.pokemon_img %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%- pokemon.pokemon_name %></h5>
+          <p class="card-text"><%- pokemon.type %></p>
+          <a href="#" class="btn btn-warning">Editar</a>
+          <a href="#" class="btn btn-danger">Eliminar</a>
+        </div>
+      </div>
+    </div>
+
+    <% })%>
+  </div>
+</div>
+<%- include('footer') %>

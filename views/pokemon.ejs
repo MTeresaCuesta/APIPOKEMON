@@ -1,0 +1,35 @@
+<%- include('navbar') %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center m-5">Todos nuestros entrenadores</h1>
+    </div>
+  </div>
+  <div class="row">
+    <% result.forEach(pokemon => { %>
+    <div class="col-4 d-flex justify-content-center my-5">
+      <div class="card" style="width: 18rem">
+        <img
+          src="/images/pokemons/<%- pokemon.pokemon_img %>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title"><%- pokemon.type %></h5>
+          <a
+            href="/trainer/oneTrainer/<%- pokemon.pokemon_id %>"
+            class="btn btn-primary"
+            >Más info</a
+          >
+          <a
+            href="/trainer/otherOneTrainer/<%- pokemon.pokemon_id %>"
+            class="btn btn-primary"
+            >Otra vista de perfil</a
+          >
+        </div>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('footer') %>

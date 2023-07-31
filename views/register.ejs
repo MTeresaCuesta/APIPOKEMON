@@ -1,0 +1,57 @@
+<%- include('navbar') %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <form
+        action="/trainer/register"
+        method="post"
+        enctype="multipart/form-data"
+      >
+        <input
+          class="form-control form-control-lg my-3"
+          type="text"
+          placeholder="Nombre"
+          aria-label=".form-control-lg example"
+          name="name"
+          required
+        />
+
+        <input
+          class="form-control form-control-lg my-3"
+          type="email"
+          placeholder="Email"
+          aria-label=".form-control-lg example"
+          name="email"
+          required
+        />
+        <input
+          class="form-control form-control-lg my-3"
+          type="password"
+          placeholder="Introduce una contraseña"
+          aria-label=".form-control-lg example"
+          name="password"
+          required
+        />
+        <div class="my-3">
+          <label for="formFileLg" class="form-label"
+            >Introduce tu imagen de perfil</label
+          >
+          <input
+            class="form-control form-control-lg"
+            id="formFileLg"
+            type="file"
+            name="img"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary mb-3">
+          Guardar datos
+        </button>
+      </form>
+      <br /><br />
+      <h3><%- message %></h3>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>
+<%- include('footer') %>
